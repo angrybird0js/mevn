@@ -9,8 +9,8 @@ const async2 = param => {
     })
 }
 async1(1).then(async2).then(result=>{
-    throw '에러';
     console.log(result)
+    throw '에러';
 }
 ,reason=>{console.log('이 promise는 '+reason+'으로 종료 되었습니다.')})
 
