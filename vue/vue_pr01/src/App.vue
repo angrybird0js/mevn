@@ -21,7 +21,15 @@
   </div>
 <hr>
 <h3>v-for 사용하기</h3>
+<h4>배열:{{ arrData}}</h4>
+<button v-on:click="add">추가하기</button>
+<button v-on:click="sub">삭제하기</button>
 
+<ul>
+  <li v-for="data in arrData" :key="data">{{ data }}</li>
+</ul><br>
+<p>추가한 값 : {{ anum }}</p>
+<p>삭제한 값 : {{ dnum }}</p>
 </template>
 
 <script>
@@ -33,20 +41,43 @@ data(){
     age: 20,
     status:false,
     inData:'',
-    arrData:[1,2,3,4,5,6,7,8,9,10,11,12]
+    arrData:[1,2,3,4,5],
+    dnum:'',
+    anum:''
     
   }
 },
 methods:{
   func : function(text){
     alert(text)
+  },
+  add : function(){
+    this.arrData.push(this.arrData.length +1)
+    this.anum= this.arrData.length
+    this.dnum = ''
+  },
+  sub : function(){
+    this.dnum = this.arrData.pop()
+    this.anum = ''
   }
 }
-
 }
 </script>
 
 <style>
+
+/* ul{
+  display: flex;
+  margin: 0;} */
+
+li{
+  float:left;
+  margin: 0 20px 0 10px
+  /* position: relative; */
+}
+/* li>text {
+    margin-left: -10px;  } */
+  
 button,input{
   margin: 0 10px;
 }
