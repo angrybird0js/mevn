@@ -20,8 +20,8 @@
         }
 
         /* 일반비동기 */
-        const testgo = async ()=>{
-        console.time('일반비동기')
+        const testgo = async ()=>{ 
+        console.time('일반비동기') // 에러가 캐치되는 시간도 6초를 기다리고 발생
         try{
             await test('코딩',3000)
             await test('222',2000)

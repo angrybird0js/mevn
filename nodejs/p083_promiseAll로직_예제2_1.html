@@ -20,7 +20,7 @@
         }
 
         /* PromiseAll 처리 */
-        const testAll = async()=>{
+        const testAll = async()=>{ // 동기처리의 병렬화
             console.time('PromiseAll시간측정')
             await Promise.all([
                 test('코딩',3000),

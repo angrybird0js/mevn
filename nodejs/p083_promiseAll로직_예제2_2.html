@@ -21,7 +21,7 @@
 
         /* PromiseAll 처리 */
         const testAll = async()=>{
-            console.time('PromiseAll시간측정')
+            console.time('PromiseAll시간측정') // 에러가 바로 발생되는 시점을 알 수 있음
             try{
                 await Promise.all([
                     test('코딩',3000),
