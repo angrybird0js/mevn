@@ -1,53 +1,34 @@
 <template>
-<p>데이터 표현 {{inValue}}</p>
-<input type="text" v-bind:value="inValue" v-on:input="upValue">
-<button style="margin:0 5px" @click="setData">데이터 입력</button>
-<button @click="getData">데이터 출력</button>
+  <nav>
+    <router-link to="/">Vue home</router-link> |
+    <router-link to="/ex_1">예제1</router-link> |
+    <router-link to="/ex_2">예제2</router-link> |
+    <router-link to="/ex_3">예제3</router-link> |
+    <router-link to="/ex_4">예제4</router-link> |
+    <router-link to="/ex_5">예제5</router-link>
+  </nav>
+  <router-view />
 </template>
-
-<script>
-
-export default {
-  name: 'App',
-  data() {
-    return {
-      inValue:'',
-      temp : ''
-      };
-
-    },
-  
-  methods: {
-    upValue: function(e){
-        this.inValue = e.target.value;
-      },
-    setData(){
-      if(this.inValue){
-        alert(this.inValue),
-        this.temp = this.inValue,
-        this.inValue = ''
-      }else{
-        alert('값을 입력해주세요.')
-      }
-    },
-    getData(){
-      this.inValue = this.temp
-      alert(this.temp)
-    }
-
-},
-  components: {
-  }
-}
-</script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align:left;
+  text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

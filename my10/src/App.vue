@@ -1,64 +1,64 @@
 <template>
-
-  <div class="black-bg" v-if="모달창" @click = "모달창=false">
+  <div class="black-bg" v-if="모달창" @click="모달창 = false">
     <div class="white-bg">
       <h4>상세페이지</h4>
-      <p>{{원룸들[0]}}</p> 
+      <p>{{ 원룸들[0] }}</p>
     </div>
   </div>
 
   <div class="menu">
     <a v-for="(a, i) in 메뉴들" :key="i">{{ a }}</a>
-  </div> 
-  <div v-for="(e, j) in products" :key="j"> 
-    <img src='./assets/room1.jpg' alt="안나옴" class="imgs">
+  </div>
+  <div v-for="(e, j) in products" :key="j">
+    <img :src="'./room' + j + '.jpg'" alt="안나옴" class="imgs" />
     <h4 @click="모달창 = true">{{ 원룸들[j].title }}</h4>
-    <p>{{원룸들[j].price}} 만원</p>
+    <p>{{ 원룸들[j].price }} 만원</p>
     <button @click="inc(j)">추천</button><span> 추천수 : {{ 추천수[j] }}</span>
   </div>
 </template>
 
 <script>
-import data from "./assets/data.js"
+import data from './assets/data.js'
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
-      원룸들 : data,
-      모달창 : false,
-      링크들: ['room0.jpg','room1.jpg','room2.jpg'],
+      원룸들: data,
+      모달창: false,
       추천수: [0, 0, 0],
-      메뉴들: ["Home", "Shop", "About"],
-      products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
-    };
+      메뉴들: ['Home', 'Shop', 'About'],
+      products: ['역삼동원룸', '천호동원룸', '마포구원룸']
+    }
   },
-  methods : {
-    inc(i){
-      // 신고수[i]++
+  methods: {
+    inc(i) {
       this.추천수[i]++
-    },
-
+    }
   },
-  components: {},
-};
+  components: {}
+}
 </script>
 
 <style>
-body{
+body {
   margin: 0;
 }
-div{
+div {
   box-sizing: border-box;
 }
-.black-bg{
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  position: fixed; padding: 20px;
+.black-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  padding: 20px;
 }
- .white-bg{
-  width: 100%; background: #ffffff;
-  border-radius: 8px; padding: 20px;
- }
+.white-bg {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -76,8 +76,8 @@ div{
   padding: 10px;
   text-decoration-line: none;
 }
-.imgs{
-  width: 100%;
-  margin-top: 40px
+.imgs {
+  width: 70%;
+  margin-top: 40px;
 }
 </style>
