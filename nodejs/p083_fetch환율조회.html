@@ -14,7 +14,7 @@
             document.body.append(einput,espan,ebutton,ep)
             ebutton.textContent= "계산"
             espan.textContent= "달러"
-            let dollar
+            let dollar = 1
             ebutton.addEventListener("click",()=>{
                 dollar = + einput.value
                 if(isNaN(dollar)){
@@ -22,14 +22,14 @@
                     return // 조기리턴
                 }
                 
-                })
                 const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD'
                 
                 fetch(url)
                 .then((response)=>response.json())
                 .then(data=>{
-                    console.log(data[0].basePrice)
-                    ep.textContent= dollar*data[0].basePrice
+                    const toData = (dollar*data[0].basePrice).toLocaleString('ko-KR')
+                    ep.textContent= toData
+                })
                 })
 
 
