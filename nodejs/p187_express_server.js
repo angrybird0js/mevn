@@ -7,8 +7,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/main', (req, res) => {
-    res.send('main 경로로 오신 것을 환영합니다.')
-  })
+  res.send('main 경로로 오신 것을 환영합니다.')
+})
 
 app.listen(port, () => {
   console.log(`Success app listening on port ${port}`)

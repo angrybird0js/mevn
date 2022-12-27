@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "vue",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
-=======
   "name": "mevn",
   "version": "1.0.0",
   "description": "시작한다 긴장된다.",
@@ -23,8 +12,8 @@
   "dependencies": {
     "express": "^4.18.2",
     "fxjs": "^0.21.3",
+    "install": "^0.13.0",
     "morgan": "^1.10.0",
     "pm2": "^5.2.2"
   }
->>>>>>> 6f152daba8accf5781cc771fd704d239bed5572f
 }
