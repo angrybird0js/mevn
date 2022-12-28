@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">홈페이지</router-link> |
     <router-link to="/ex1">예제1</router-link> |
-    <router-link to="/ex2">예제2</router-link>
+    <router-link to="/ex2">예제2</router-link> |
+    <router-link to="/ex3">예제3</router-link>
   </nav>
   <router-view />
 </template>
