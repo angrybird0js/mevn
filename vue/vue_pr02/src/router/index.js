@@ -29,7 +29,21 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (ex.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "ex" */ '../views/ex3.vue')
+    component: () =>
+      import(
+        /* webpackChunkName: "ex2", webpackPrefetch:true */ '../views/ex3.vue'
+      )
+  },
+  {
+    path: '/ex4',
+    name: 'ex4',
+    // route level code-splitting
+    // this generates a separate chunk (ex.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(
+        /* webpackChunkName: "ex2" , webpackPrefetch:true */ '../views/ex4.vue'
+      )
   }
 ]
 
