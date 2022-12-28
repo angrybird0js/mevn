@@ -4,8 +4,7 @@
   "description": "시작한다 긴장된다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test2": "console.log('단축경로지정')"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
