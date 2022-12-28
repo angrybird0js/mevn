@@ -1,5 +1,5 @@
 const express = require('express')
-import express from 'express'
+// import express from 'express'
 
 const path = require('path') // 경로를 활용할 수 있는 유틸
 const logger = require('morgan')
