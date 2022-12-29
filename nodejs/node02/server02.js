@@ -32,6 +32,7 @@ app.post('/info', function (req, res) {
 
 app.get('/list', (req, res) => {
   fs.readFile(_path + '111.txt', 'utf-8', (err, data) => {
+    // 파일이 없으면 생성하고 내용추가 있으면 그냥 추가
     if (err) throw err
     console.log(data)
     res.send(data)
