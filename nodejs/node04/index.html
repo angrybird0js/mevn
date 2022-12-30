@@ -10,8 +10,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", ()=>{
             const btn = document.querySelector(".btn-primary")
+            const bk = document.querySelector(".modal-bk")
             btn.addEventListener("click", ()=>{
                 btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>전송중...'
+                bk.classList.add('show')
             })
 
         })
@@ -113,8 +115,11 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
-            display: block;
+            display: none;
             z-index: 10;
+        }
+        .modal-bk.show{
+            display: block;
         }
         .sk-folding-cube{
             position: absolute;
