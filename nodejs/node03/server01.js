@@ -12,7 +12,6 @@ app.use(
   })
 )
 
-// module.exports = router
 const _path = path.join(__dirname, '/')
 console.log(_path)
 app.use('/', express.static(_path))
