@@ -2,8 +2,13 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const multer = require('multer')
+
 const app = express()
 const port = 3000
+const _path = path.join(__dirname, '/')
+console.log(_path)
+app.use('/', express.static(_path))
+app.use(logger('tiny'))
 
 app.use(express.json())
 app.use(
@@ -12,18 +17,14 @@ app.use(
   })
 )
 
-// module.exports = router
-const _path = path.join(__dirname, '/')
-console.log(_path)
-app.use('/', express.static(_path))
-app.use(logger('tiny'))
-
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
     cb(null, _path) // 경로를 같은 폴더에 설정
   },
   filename: (req, res, cb) => {
-    cb(null, res.originalname) // 오리지날네임 설정
+    let fix = Buffer.from(res.originalname, 'latin1').toString('utf8') // 한글깨짐방지
+    cb(null, fix) // 오리지날네임 설정
+    // cb(null, res.originalname)
   }
 })
 
