@@ -1,5 +1,5 @@
 {
-  "name": "vue_pr04",
+  "name": "vue_pr03",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -41,10 +41,7 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {
-      "space-before-function-paren": "off",
-      "vue/multi-word-component-names": "off"
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",

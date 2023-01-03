@@ -17,7 +17,7 @@ export default {
   created() {
     this.$socket.on('chat', (data) => {
       window.scrollTo(0, document.body.scrollHeight)
-      this.textarea = data.message + '\n'
+      this.textarea += data.message + '\n'
     })
   },
   data() {
@@ -41,22 +41,39 @@ body {
   padding-bottom: 3em;
 }
 textarea {
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 0;
+  min-height: 400px;
+  height: 100%;
+  overflow: auto;
   resize: none;
   font-size: 2em;
   color: darkslategrey;
 }
 #container {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-}
-#messages {
-  height: 500px;
 }
 #input {
   border: none;
   padding: 0 16px;
-  flex-glow: 1;
+  flex-grow: 1;
+  border-radius: 32px;
+  margin: 4px;
+  border-bottom: 1px solid rgb(86, 73, 73);
+  height: 40px;
+}
+#input:focus {
+  outline: none;
+}
+button {
+  background: #333;
+  border: none;
+  padding: 0.1em;
+  margin: 4px;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
 }
 </style>

@@ -15,9 +15,9 @@ app.use('/', express.static(_path))
 app.use(logger('tiny'))
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
+  socket.on('chat', (msg) => {
     // 받을 내용
-    io.emit('chat message', msg) //보낼 내용
+    io.emit('chat', msg) //보낼 내용
   })
 })
 
