@@ -1,5 +1,10 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1>{{ kys }}</h1>
+    <h2>{{ name }}</h2>
   </div>
 </template>
+
+<script setup>
+const name = '이것은 setup으로 작성한 것임'
+</script>
