@@ -1,4 +1,10 @@
 <template>
+  <div class="modal">
+    <div class="modal-body">
+      <div>👏🏻변경되었습니다.😁</div>
+    </div>
+  </div>
+
   <div id="container">
     <div id="chatid1">
       <span
@@ -18,11 +24,10 @@
         {{ chat }}
       </div>
     </div>
-    <span>{{ ids }}</span>
     <div id="chatid2">
       귓속말:
       <input type="checkbox" @click="ck = $event.target.checked" />
-      <input :disabled="ck" v-model="toname" placeholder="상대이름" />에게
+      <input :disabled="!ck" v-model="toname" placeholder="상대이름" />에게
     </div>
 
     <div id="send">
@@ -40,14 +45,11 @@
 <script>
 export default {
   name: 'chat',
-  setup() {
-    const ids = '왜 안드가!'
-    return { ids }
-  },
+  setup() {},
   created() {
     this.$socket.on('chat', (data) => {
-      console.log(data)
-      this.chatData.push(data)
+      console.log(data.message)
+      this.chatData.push(data.message)
     })
   },
   data() {
@@ -56,7 +58,8 @@ export default {
       myname: '익명',
       toname: '',
       ck: false,
-      message: ''
+      message: '',
+      modalon: false
     }
   },
   methods: {
@@ -64,6 +67,11 @@ export default {
       console.log('나중에 씀')
     },
     sendMessage() {
+      this.$socket.emit('chat', {
+        message: this.message,
+        id: this.myname,
+        toid: this.toname
+      })
       console.log(this.message)
     }
   }

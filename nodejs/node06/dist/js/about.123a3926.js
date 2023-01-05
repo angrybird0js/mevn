@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkchat02"]=self["webpackChunkchat02"]||[]).push([[443],{8924:function(u,n,t){t.r(n),t.d(n,{default:function(){return a}});var e=t(3396),s=t(7139),c={__name:"AboutView",setup(u){const n="이것은 setup으로 작성한 것임";return(u,t)=>((0,e.wg)(),(0,e.iD)("div",null,[(0,e._)("h1",null,(0,s.zw)(u.kys),1),(0,e._)("h2",null,(0,s.zw)(n))]))}};const l=c;var a=l}}]);
+//# sourceMappingURL=about.123a3926.js.map

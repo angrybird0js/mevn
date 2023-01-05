@@ -14,10 +14,23 @@ console.log(_path)
 app.use('/', express.static(_path))
 app.use(logger('tiny'))
 
+let name, toname, content
+let idInfo = {}
 io.on('connection', (socket) => {
+  // console.log(socket.id)
   socket.on('chat', (msg) => {
+    // console.log(msg)
+    name = msg.id
+    toname = msg.toid
+    content = msg.message
+    idInfo[name] = socket.id
+    if (!toname) {
+      console.log(idInfo)
+      io.emit('chat', msg) //보낼 내용
+    } else {
+      io.to(idInfo[toname]).emit('chat', msg) // 특정상대에게 보냄
+    }
     // 받을 내용
-    io.emit('chat', msg) //보낼 내용
   })
 })
 
