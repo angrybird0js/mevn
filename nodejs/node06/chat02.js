@@ -9,7 +9,7 @@ const server = http.createServer(app)
 const io = new Server(server)
 
 const port = 3000
-const _path = path.join(__dirname, '/')
+const _path = path.join(__dirname, '/dist')
 console.log(_path)
 app.use('/', express.static(_path))
 app.use(logger('tiny'))
