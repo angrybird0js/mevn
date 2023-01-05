@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">채팅</router-link> |
+    <router-link to="/about">채팅목록</router-link>
   </nav>
   <router-view />
 </template>
