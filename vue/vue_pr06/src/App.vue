@@ -5,8 +5,8 @@
     <router-link to="/String">String</router-link> |
     <router-link to="/Html">Html</router-link> |
     <router-link to="/Input">Input</router-link> |
-    <router-link to="/더미">더미</router-link> |
-    <router-link to="/더미">더미</router-link> |
+    <router-link to="/Select">Select</router-link> |
+    <router-link to="/Checkbox">Checkbox</router-link> |
     <router-link to="/더미">더미</router-link> |
   </nav>
   <router-view />
