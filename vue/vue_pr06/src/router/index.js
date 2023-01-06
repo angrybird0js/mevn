@@ -45,6 +45,12 @@ const routes = [
     name: 'Checkbox',
     component: () =>
       import(/* webpackChunkName: "ex" */ '../views/bindCheckbox.vue')
+  },
+  {
+    path: '/List',
+    name: 'List',
+    component: () =>
+      import(/* webpackChunkName: "ex" */ '../views/bindList.vue')
   }
 ]
 
