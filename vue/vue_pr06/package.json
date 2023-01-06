@@ -1,5 +1,5 @@
 {
-  "name": "vue_pr03",
+  "name": "vue_pr06",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -34,8 +34,7 @@
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "plugin:prettier/recommended"
+      "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
