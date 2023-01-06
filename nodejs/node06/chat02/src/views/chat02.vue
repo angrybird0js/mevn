@@ -65,6 +65,11 @@ export default {
   methods: {
     makeName() {
       console.log('나중에 씀')
+      this.$socket.emit('chat', {
+        id: this.myname,
+        message: `${this.myname}으로(로) 이름을 바꾸셨습니다.`
+      })
+      this.message = ''
     },
     sendMessage() {
       this.$socket.emit('chat', {
@@ -73,6 +78,7 @@ export default {
         toid: this.toname
       })
       console.log(this.message)
+      this.message = ''
     }
   }
 }

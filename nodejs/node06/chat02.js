@@ -15,7 +15,7 @@ app.use('/', express.static(_path))
 app.use(logger('tiny'))
 
 let name, toname, content
-let idInfo = {}
+let idInfo = {} // 아이디를 키로 대화명을 보관하는 객체
 io.on('connection', (socket) => {
   // console.log(socket.id)
   socket.on('chat', (msg) => {
@@ -28,6 +28,7 @@ io.on('connection', (socket) => {
       console.log(idInfo)
       io.emit('chat', msg) //보낼 내용
     } else {
+      socket.emit('chat', msg) // 자신에게 보내는 내용.
       io.to(idInfo[toname]).emit('chat', msg) // 특정상대에게 보냄
     }
     // 받을 내용
