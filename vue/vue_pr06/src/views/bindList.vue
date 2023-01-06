@@ -17,13 +17,13 @@
         <th>가격</th>
         <th>배송료</th>
         <th>수량</th>
-        <th>합계</th>
+        <th style="width: 100px">합계</th>
       </tr>
       <tr :key="i" v-for="(item, i) in productList">
         <td>{{ i + 1 }}</td>
         <td>{{ item.category }}</td>
         <td>{{ item.product_name }}</td>
-        <td>{{ item.price }}</td>
+        <td class="iprice"><input v-model.number="item.price" /></td>
         <td>
           {{
             selData !== '제주'
@@ -50,6 +50,10 @@
           }}
         </td>
       </tr>
+      <tr>
+        <td id="sum-title" colspan="6">총합</td>
+        <td>{{ (sum = total.reduce((a, c) => a + c, 0)) }}</td>
+      </tr>
     </table>
   </div>
 </template>
@@ -59,7 +63,7 @@ export default {
   name: 'app',
   data() {
     return {
-      //   deli: '',
+      sum: 0,
       selData: '',
       수량: [0, 0, 0, 0, 0],
       total: [],
@@ -109,4 +113,33 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+  border: 1px solid #000;
+}
+th {
+  background-color: lightskyblue;
+}
+#sum-title {
+  background-color: gold;
+}
+.iprice {
+  padding: 0px !important;
+}
+input,
+input:focus {
+  margin: 0px;
+  padding: 3px;
+  height: 100%;
+  border: 0;
+  text-align: center;
+  outline: none;
+  font-size: 1em;
+}
+</style>
