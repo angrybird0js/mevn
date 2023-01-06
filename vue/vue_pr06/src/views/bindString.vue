@@ -10,8 +10,8 @@ export default {
   data() {
     return {
       userName: '홍길동',
-      arr: [],
-      obj: {}
+      arr: [1, 2, 3, 4, 5],
+      obj: { name: '부싯돌', age: 22 }
     }
   },
   methods: {}

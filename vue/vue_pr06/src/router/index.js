@@ -21,6 +21,24 @@ const routes = [
     name: 'String',
     component: () =>
       import(/* webpackChunkName: "ex" */ '../views/bindString.vue')
+  },
+  {
+    path: '/Html',
+    name: 'Html',
+    component: () =>
+      import(/* webpackChunkName: "ex" */ '../views/bindHtml.vue')
+  },
+  {
+    path: '/Input',
+    name: 'Input',
+    component: () =>
+      import(/* webpackChunkName: "ex" */ '../views/bindInput.vue')
+  },
+  {
+    path: '/Input',
+    name: 'Input',
+    component: () =>
+      import(/* webpackChunkName: "ex" */ '../views/bindInput.vue')
   }
 ]
 
