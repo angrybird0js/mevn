@@ -1,4 +1,4 @@
-const axios = require('axios') // 리퀘스트 용도
+const axios = require('axios') // 리퀘스트 그 이상 용도
 const cheerio = require('cheerio') // 선택자 용도
 
 const url = 'https://www.melon.com/chart/index.htm'
