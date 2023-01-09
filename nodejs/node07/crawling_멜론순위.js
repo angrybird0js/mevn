@@ -14,6 +14,6 @@ axios.get(url).then((res) => {
     song.push($(this).text())
   })
   song.forEach((v, i) => {
-    if (i < 10) console.log(`${i + 1}위:${v.trim()}`)
+    if (i < 20) console.log(`${i + 1}위:${v.trim()}`)
   })
 })
