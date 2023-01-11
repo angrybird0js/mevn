@@ -25,7 +25,12 @@ bot.onText(/^따라해/, (msg, match) => {
 // messages.
 bot.on('message', (msg) => {
   const chatId = msg.chat.id
+  console.log(msg)
 
+  bot.sendPhoto(
+    chatId,
+    'AgACAgUAAx0CZIK4dgACAlRjvghviaw74WnIgWxuLvw9JAsDaAACL7IxG0Sh8FX7fceL65BMegEAAwIAA3MAAy0E'
+  )
   // send a message to the chat acknowledging receipt of their message
   bot.sendMessage(chatId, '반가워요. 왜불렀어요.')
 })
