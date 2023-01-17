@@ -13,18 +13,4 @@ mongoose
   .then(() => console.log('connection successful'))
   .catch((e) => console.error(e))
 
-
-const csvFilePath = './p360/sensor.csv'
-const csv = require('csvtojson')
-const path = require('path')
-const _path = path.join(__dirname,csvFilePath)
-const Sensor = require('./p360/sensor.js')
-
-const main = async()=>{
-    const sensorList = await csv().fromFile(_path)
-    console.log(sensorList)
-    Sensor.insertMany(sensorList, function(error,docs){
-        console.log('데이터 삽입완료!')
-    })
-}
-main()
+  const Sensor = require('./p360/sensor.js')
