@@ -7,9 +7,11 @@ const main = async () => {
       // title: /홍길동/
     },
     {
-       "something": { $each: [1, 2, 3] } 
-    }
-    // { upsert: true, multi: true, new: true }
+      $push: { // 배열에 추가 // 그외 $addToSet은 중복값 제외하며 푸시
+        "something": { $each: [4, 5, 6] } // 스키마 미리 만들어 놔야함 추가잘됨
+      }
+    },
+    { upsert: true, multi: true, new: true }
   ).lean()
   console.log(t)
 }
